@@ -67,4 +67,13 @@ export default class Character implements Fighter {
     }
     this._lifePoints = this._maxLifePoints;
   }
+
+  special(enemy: Fighter | SimpleFighter): void {
+    if (this._energy.type_ === 'mana') {
+      this._defense += 5;
+      enemy.receiveDamage(12);
+    } else {
+      this._strength += 6;
+    }
+  }
 }
